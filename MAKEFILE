@@ -1,0 +1,20 @@
+#objects
+OBJS= main.o
+
+#compiler flags -g for debug -O3 for optimization
+CFLAGS= -g -O3
+
+all: main
+
+%.o: %.c
+	${CC} ${CFLAGS} -c -o $@ $<
+
+main: ${OBJS} main.o
+	${CC} -o $@ $^
+
+run: main
+	./main
+
+clean:
+	rm -f *.o main
+
