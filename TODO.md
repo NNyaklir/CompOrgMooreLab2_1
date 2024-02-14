@@ -1,7 +1,7 @@
 ## Lab 2.1
 
 ## my_string
-    [ ] Impliment strlen
+    [x] Impliment strlen
     [ ] Impliment strcomp & strncomp
     [ ] Impliment memcpy
     [ ] Impliment strchr
