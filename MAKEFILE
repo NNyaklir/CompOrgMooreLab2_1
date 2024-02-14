@@ -10,7 +10,7 @@ all: main
 %.o: %.c
 	${CC} ${CFLAGS} -c -o $@ $<
 
-main: ${OBJS} main.o
+main: ${OBJS} main.o mystring.o
 	${CC} -o $@ $^
 
 run: main
