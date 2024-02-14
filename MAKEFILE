@@ -1,7 +1,9 @@
+#compiler
+CC= cc 
 #objects
 OBJS= main.o my_string.o
 
-CC= cc 
+
 
 #compiler flags -g for debug -O3 for optimization
 CFLAGS= -g -O3
@@ -21,3 +23,4 @@ clean:
 	rm -f *.o main
 
 my_string.o: my_string.c my_string.h
+main.o: main.c
