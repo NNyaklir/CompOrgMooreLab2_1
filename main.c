@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static char *randstring(size_t length) {
+/*static char *randstring(size_t length) {
   static char charset[] =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`~!@#$%^&*"
       "()_+-=[]{}\\|;:,<.>/?";
@@ -18,17 +18,24 @@ static char *randstring(size_t length) {
   randomString[length] = '\0';
 
   return randomString;
-}
+} */
 
 int main(void) {
-  char *s;
-  size_t len = 5;
+ // char *s;
+ // size_t len = 5;
 
-  s = randstring(len);
+ // s = randstring(len);
 
-  printf("String s: %s\n", s);
+  //printf("String s: %s\n", s);
 
-  free(s);
+  //free(s);
 
-  return 0;
+  //return 0;
+
+  //write your test code here
+  char* name = 'johhny';
+  int n = str_len( *name);
+  printf("%d\n" ,n);
+
+  
 }

@@ -1,7 +1,7 @@
 #include "ArrayList.h"
 
 typedef struct{
-    //ElementType **array;
+    void **array;
     size_t size;
     size_t capacity;
 
