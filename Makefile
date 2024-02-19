@@ -1,7 +1,7 @@
 #compiler
 CC= cc 
 #objects
-OBJS= my_string.o
+OBJS= my_string.o ArrayList.o
 
 #
 
@@ -24,4 +24,6 @@ clean:
 	rm -f *.o main
 
 my_string.o: my_string.c my_string.h
+ArrayList.o: ArrayList.c ArrayList.h
+tokenizer.o: tokenizer.c tokenizer.h
 #main.o: main.c
