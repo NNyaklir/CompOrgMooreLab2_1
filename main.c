@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "my_string.c"
-
+#include <stdlib.h>
 
 static char *randstring(size_t length) {
   static char charset[] =
