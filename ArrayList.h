@@ -3,7 +3,11 @@
 
 #include <stdlib.h>
 
-struct ArrayList_t;
+typedef struct {
+    void **array;
+    unsigned long size;
+    unsigned long capacity;
+} ArrayList_t;
 
 ArrayList_t *AL_init(void); //1
 

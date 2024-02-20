@@ -1,11 +1,11 @@
 #include "ArrayList.h"
 #include <stdlib.h>
 
-struct ArrayList_t{
+typedef struct{
     void **array;
     size_t size;
     size_t capacity;
-}
+} ArrayList_t;
 
 
 //1
