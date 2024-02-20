@@ -41,7 +41,8 @@ char **tokenize(char *str, const char *delims) {
     return tokens;
 }
 
-int main() {
+/* test code
+
     char str[] = "This is a sample string";
     const char delims[] = " ";
 
@@ -56,4 +57,4 @@ int main() {
     free(tokens);
 
     return 0;
-}
+     */
