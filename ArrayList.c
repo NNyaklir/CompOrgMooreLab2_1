@@ -5,12 +5,12 @@ typedef struct{
     void **array;
     size_t size;
     size_t capacity;
-} ArrayList_t*;
+} ArrayList_t;
 
 
 //1
 ArrayList_t* AL_init(void){
-    ArrayList_t *list = malloc(sizeof(ArrayList_t));// accrue space
+    ArrayList_t list = malloc(sizeof(ArrayList_t));// accrue space
     if (list==NULL){
         return NULL; //if empty show its empty
     }
@@ -19,6 +19,6 @@ ArrayList_t* AL_init(void){
     list->size = 0;
     list->capacity = 0; //initilize at zero
 
-    return list; //returns pointer of list
+    return &list; //returns pointer of list
 }
 
