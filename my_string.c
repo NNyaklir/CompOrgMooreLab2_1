@@ -32,7 +32,7 @@ int str_cmp(const char *s1, const char *s2)
 
 int str_n_cmp(const char *s1, const char *s2, size_t n)
 {
-    int count = 0;
+    unsigned long count = 0;
     while(*(s1+count) != '\0' && *(s2+count) != '\0' && count < n-1) //stop at end of str or the second to last char
     {
         if(*(s1+count) != *(s2+count)) // compare the characters
@@ -68,7 +68,7 @@ char *str_chr(const char *s, int c)
     {
         count++;
     }
-    return s+count; // retun a pointer to the char
+    return (char *)(s+count); // retun a pointer to the char
 }
 
 //5
@@ -82,7 +82,7 @@ char *str_p_brk(const char *s, const char *charset)
         {
             if(*(s+count1) == *(charset+count2)) //compares each letter of first to each letter in second 
             {
-                return (s+count1);// returns pointer of first string
+                return (char *)(s+count1);// returns pointer of first string
             }
             count2++;
         }

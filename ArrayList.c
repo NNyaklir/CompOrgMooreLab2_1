@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "ArrayList.h"
 
 typedef struct{
     void **array;
@@ -8,4 +8,10 @@ typedef struct{
 
 
 } ArrayList_t;
+
+//1
+ArrayList_t *AL_init(void){
+
+    
+}
 
