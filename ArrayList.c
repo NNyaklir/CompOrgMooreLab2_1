@@ -1,4 +1,5 @@
 #include "ArrayList.h"
+#include <Stdlib.h>
 
 typedef struct{
     void **array;
