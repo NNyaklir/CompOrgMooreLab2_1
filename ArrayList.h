@@ -1,5 +1,5 @@
-#ifndef arraylist_included
-#define arraylist_included
+#ifndef ArrayList_H
+#define ArrayList_H
 
 #include <stdlib.h>
 
