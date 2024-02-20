@@ -9,7 +9,7 @@ typedef struct{
 
 
 //1
-struct ArrayList_t *AL_init(void){
+struct *AL_init(void){
     ArrayList_t *list = malloc(sizeof(ArrayList_t));// accrue space
     if (list==NULL){
         return NULL; //if empty show its empty
