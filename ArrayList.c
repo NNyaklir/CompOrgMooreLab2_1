@@ -1,15 +1,15 @@
 #include "ArrayList.h"
 #include <stdlib.h>
 
-typedef struct{
+struct ArrayList_t{
     void **array;
     size_t size;
     size_t capacity;
-} ArrayList_t;
+}
 
 
 //1
-struct *AL_init(void){
+ArrayList_t *AL_init(void){
     ArrayList_t *list = malloc(sizeof(ArrayList_t));// accrue space
     if (list==NULL){
         return NULL; //if empty show its empty
