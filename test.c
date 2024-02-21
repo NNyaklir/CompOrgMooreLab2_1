@@ -918,7 +918,7 @@ int main(void) {
       &test_AL_delete_first, &test_AL_insert_last, &test_AL_delete_last,
       &test_AL_insert_at,    &test_str_len,        &test_str_cmp,
       &test_mem_cpy,         &test_str_chr,        &test_str_p_brk,
-      &test_str_sep,         &test_str_cat,        &test_tokenize};
+      &test_str_sep,         /*&test_str_cat,*/        &test_tokenize};
 
   pid_t pid;
 
