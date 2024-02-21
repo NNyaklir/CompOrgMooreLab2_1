@@ -33,9 +33,9 @@ int main(void) {
   //return 0;
 
   //write your test code here
-  char* name = 'johhny';
-  int n = str_len( *name);
-  printf("%d\n" ,n);
+  //char* name = 'johhny';
+  //int n = str_len( *name);
+  //printf("%d\n" ,n);
 
-  
+
 }

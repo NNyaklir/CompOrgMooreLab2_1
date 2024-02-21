@@ -1,29 +1,34 @@
-#compiler
-CC= cc 
-#objects
-OBJS= my_string.o ArrayList.o
+CC   = cc
+OBJS = tokenizer.o
+S_OBJS = ./o/ArrayList.o ./o/my_string.o ./o/tokenizer.o
 
-#
+CFLAGS = -I./h -O3 -g3 -Wall -Wextra -Werror=format-security -Werror=implicit-function-declaration \
+         -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wwrite-strings -Wconversion
 
-#compiler flags -g for debug -O3 for optimization
-CFLAGS= -O3 -g3 -Wall -Wextra -Werror=format-security -Werror=implicit-function-declaration \
-        -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wwrite-strings
-
-all: main
+all: compile
 
 %.o: %.c
-	${CC} ${CFLAGS} -c -o $@ $<
+	${CC} $(CFLAGS) -c -o $@ $<
 
-main: ${OBJS} main.o 
+compile: $(OBJS)
+
+test: $(OBJS) $(S_OBJS) test.o
 	${CC} -o $@ $^
 
-run: main
-	./main
-
 clean:
-	rm -f *.o main
+	(cd student && make clean)
+	rm -rf ./h
+	rm -rf ./o
+	rm -f *.o test
 
-my_string.o: my_string.h
-ArrayList.o: ArrayList.h
-tokenizer.o: tokenizer.h
-main.o: main.c
+#tokenizer.o: tokenizer.c tokenizer.h my_string.h
+#	${CC} $(CFLAGS) -c -Dtokenize=my_tokenize -o $@ $<
+test.o: test.c ./h/my_string.h ./h/tokenizer.h ./h/ArrayList.h
+
+$(S_OBJS):
+	mkdir ./h
+	mkdir ./o
+	(cd student && make)
+	(cd student && cp *.h ../h)
+	(cd student && mv *.o ../o)
+
