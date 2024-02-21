@@ -110,6 +110,30 @@ int AL_insert_first (ArrayList_t *AL, void *elem, void *(*copy_data)(void *)){
     return 0;
 }
 
+int AL_insert_last(ArrayList_t *AL, void *elem, void *(*copy_data)(void *)) {
+    if (AL == NULL) {
+        return 1;// fail
+    }
+
+    if (AL->size== AL->capacity) {
+        size_t newCapacity = (AL->capacity == 0) ? 1 : AL->capacity * 2;
+        void** newArray =realloc(AL->array, newCapacity * sizeof(void *));
+        if (newArray==NULL) {
+            return 1;  // Failure
+        }
+        AL->array =newArray;
+        AL->capacity= newCapacity;
+    }
+
+    if (copy_data !=NULL) {
+        AL->array[AL->size] =copy_data(elem);
+    } else {
+        AL->array[AL->size] =elem;
+    }
+
+    AL->size++;
+    return 0;  //win
+}
 
 int AL_delete_first(ArrayList_t *AL, int (*delete_data)(void *)) {
     if (AL == NULL || AL->size == 0) {
