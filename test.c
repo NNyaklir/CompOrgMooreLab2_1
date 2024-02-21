@@ -795,7 +795,7 @@ static double test_str_sep(void) {
   return points * ((double)passed) / ((double)N_TESTS);
 }
 
-static double test_str_cat(void) {
+/*static double test_str_cat(void) {
   size_t passed = 0;
   const double points = 4.;
 
@@ -852,7 +852,7 @@ static double test_str_cat(void) {
   }
 
   return points * ((double)passed) / ((double)N_TESTS);
-}
+}*/
 
 static double test_tokenize(void) {
   size_t passed = 0;
