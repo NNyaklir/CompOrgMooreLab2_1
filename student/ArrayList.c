@@ -52,19 +52,30 @@ void AL_print(ArrayList_t *AL, void (*print_data)(void*)){
 }
 
 
-void *AL_get_at(ArrayList_t *AL, size_t i, void *elem, void*(*copy_data)(void *), int (*delete_data)(void *)){
-    if (AL==NULL || i>=AL->array){
-        return 1; //fail sadge
+void *AL_get_at(ArrayList_t *AL, size_t i){
+    if(AL==NULL || i>=AL->size){
+        return NULL; //if empty return empty
     }
 
-    if(delete_data !=NULL){
-        delete_data(AL->array[i]);
+    return AL->array[i]; //return value if not
+}
+
+int AL_set_at(ArrayList_t *AL, size_t i, void *elem, void *(*copy_data)(void *),int (*delete_data)(void *)){
+    if(AL==NULL || i>=AL->size){
+        return 1; //fail
     }
-    if(copy_data!=NULL){
-        AL->array[i]= copy_data(elem);
+
+    if(delete_data!=NULL){
+        delete_data(AL->array[i]); //if there is data there then delete it
     }
-    else {
-        AL->array[i]= elem;
+
+    if(copy_data !=NULL){
+        AL->array[i] =copy_data(elem); //if there is something to copy, copy to specified
+
     }
+    else{
+        AL->array[i]= elem; //or just straight up inset it
+    }
+
     return 0; //success
 }
