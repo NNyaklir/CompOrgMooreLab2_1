@@ -1,10 +1,10 @@
 #include <stdlib.h>
 
 char **tokenize(char *str, const char *delims) {
-    // Count the number of tokens
-    size_t token_count = 1;  // At least one token even if str is empty
+    //count the number of tokens
+    size_t token_count = 1;  // at least one token even if str is empty
     for (size_t i = 0; str[i] != '\0'; i++) {
-        for (size_t j = 0; delims[j] != '\0'; j++) {
+        for (size_t j = 0; delims[j] != '\0'; j++) { //delims takes the whole line
             if (str[i] == delims[j]) {
                 token_count++;
                 break;
@@ -12,30 +12,30 @@ char **tokenize(char *str, const char *delims) {
         }
     }
 
-    // Allocate memory for array of pointers
+    //allocate memory for array of pointers
     char **tokens = (char **)malloc((token_count + 1) * sizeof(char *));
-    if (tokens == NULL) {
-        // Memory allocation failed
+    if (tokens== NULL) {
+        //memory allocation failed
         return NULL;
     }
 
-    // Tokenize the string
+    //tokenize the string
     size_t token_index = 0;
     char *token = str;
     while (*str != '\0') {
-        for (size_t j = 0; delims[j] != '\0'; j++) {
-            if (*str == delims[j]) {
-                *str = '\0';  // Null-terminate the substring
+        for (size_t j =0; delims[j] != '\0'; j++) {
+            if (*str ==delims[j]) {
+                *str = '\0'; //null-terminate the substring
                 tokens[token_index] = token;
                 token_index++;
-                token = str + 1;  // Move to the next character
+                token = str + 1;  //move to the next character
                 break;
             }
         }
         str++;
     }
 
-    // Null-terminate the array of pointers
+    //null-terminate the array of pointers
     tokens[token_index] = NULL;
 
     return tokens;
