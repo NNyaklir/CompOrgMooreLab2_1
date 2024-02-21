@@ -39,3 +39,32 @@ int AL_free(ArrayList_t *AL, int (*delete_data)(void *)){
     return 0; //success
 }
 
+void AL_print(ArrayList_t *AL, void (*print_data)(void*)){
+    if (AL==NULL || AL->array==NULL){
+        return;
+    }
+
+    for(size_t i=0; i< AL->size; i++){
+        if(print_data !=NULL){
+            print_data(AL->array[i]);
+        }
+    }
+}
+
+
+void *AL_get_at(ArrayList_t *AL, size_t i, void *elem, void*(*copy_data)(void *), int (*delete_data)(void *)){
+    if (AL==NULL || i>=AL->array){
+        return 1; //fail sadge
+    }
+
+    if(delete_data !=NULL){
+        delete_data(AL->array[i]);
+    }
+    if(copy_data!=NULL){
+        AL->array[i]= copy_data(elem);
+    }
+    else {
+        AL->array[i]= elem;
+    }
+    return 0; //success
+}
