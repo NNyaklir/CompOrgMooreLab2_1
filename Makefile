@@ -1,5 +1,5 @@
 CC   = cc
-OBJS = tokenizer.o
+
 S_OBJS = ./o/ArrayList.o ./o/my_string.o ./o/tokenizer.o
 
 CFLAGS = -I./h -O3 -g3 -Wall -Wextra -Werror=format-security -Werror=implicit-function-declaration \
