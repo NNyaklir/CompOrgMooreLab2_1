@@ -795,7 +795,7 @@ static double test_str_sep(void) {
   return points * ((double)passed) / ((double)N_TESTS);
 }
 
-/*static double test_str_cat(void) {
+static double test_str_cat(void) {
   size_t passed = 0;
   const double points = 4.;
 
@@ -852,7 +852,7 @@ static double test_str_sep(void) {
   }
 
   return points * ((double)passed) / ((double)N_TESTS);
-}*/
+}
 
 static double test_tokenize(void) {
   size_t passed = 0;
@@ -918,7 +918,7 @@ int main(void) {
       &test_AL_delete_first, &test_AL_insert_last, &test_AL_delete_last,
       &test_AL_insert_at,    &test_str_len,        &test_str_cmp,
       &test_mem_cpy,         &test_str_chr,        &test_str_p_brk,
-      &test_str_sep,         /*&test_str_cat,*/        &test_tokenize};
+      &test_str_sep,         &test_str_cat,        &test_tokenize};
 
   pid_t pid;
 
