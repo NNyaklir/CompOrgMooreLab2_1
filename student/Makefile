@@ -1,7 +1,7 @@
 #compiler
 CC= cc 
 #objects
-OBJS= my_string.o ArrayList.o
+OBJS= my_string.o ArrayList.o tokenizer.o
 
 #
 
