@@ -11,11 +11,11 @@ typedef struct {
 
 ArrayList_t *AL_init(void); //1
 
-//int AL_free(ArrayList_t *AL, int (*delete_data)(void *)); //2
+int AL_free(ArrayList_t *AL, int (*delete_data)(void *)); //2
 
-//void AL_print(ArrayList_t *AL, void (*print_data)(void *)); //3
+void AL_print(ArrayList_t *AL, void (*print_data)(void *)); //3
 
-//void *AL_get_at(ArrayList_t *AL, size_t i); //4
+void *AL_get_at(ArrayList_t *AL, size_t i); //4
 
 //int AL_set_at(ArrayList_t *AL, size_t i, void *elem, void *(*copy_data)(void *), int (*delete_data)(void *));// 5
 
